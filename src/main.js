@@ -3,6 +3,8 @@ var posterImage = document.querySelector('.poster-img');
 var posterTitle = document.querySelector('.poster-title');
 var posterQuote = document.querySelector('.poster-quote');
 var randomizedButton = document.querySelector('.show-random');
+var formButton = document.querySelector('.show-form');
+var showSavedButton = document.querySelector('.show-saved');
 
 // we've provided you with some data to work with 👇
 var images = [
@@ -103,9 +105,13 @@ var quotes = [
   "A champion is defined not by their wins but by how they can recover when they fall."
 ];
 
+var currentPoster;
+
 // event listeners go here 👇
 window.onload = randomPoster;
 randomizedButton.addEventListener('click',randomPoster);
+formButton.addEventListener('click', );
+showSavedButton.addEventListener('click', );
 
 // functions and event handlers go here 👇
 // (we've provided one for you to get you started)!
@@ -113,9 +119,7 @@ function randomPoster() {
   var randomImage = images[getRandomIndex(images)];
   var randomTitle = titles[getRandomIndex(titles)];
   var randomQuote = quotes[getRandomIndex(quotes)];
-
-  var currentPoster = new Poster(randomImage, randomTitle, randomQuote);
-
+  currentPoster = new Poster(randomImage, randomTitle, randomQuote);
   posterImage.setAttribute("src", randomImage);
   posterTitle.innerText = randomTitle;
   posterQuote.innerText = randomQuote;
