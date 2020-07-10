@@ -7,6 +7,7 @@ var formButton = document.querySelector('.show-form');
 var showSavedButton = document.querySelector('.show-saved');
 var mainPage = document.querySelector('.main-poster');
 var posterForm = document.querySelector('.poster-form');
+var savedPosters = document.querySelector('.saved-posters');
 
 // we've provided you with some data to work with 👇
 var images = [
@@ -113,15 +114,19 @@ var currentPoster;
 window.onload = randomPoster;
 randomizedButton.addEventListener('click',randomPoster);
 formButton.addEventListener('click', posterFormButton);
-showSavedButton.addEventListener('click', );
+showSavedButton.addEventListener('click', savedPosterButton);
 
 // functions and event handlers go here 👇
 // (we've provided one for you to get you started)!
+function savedPosterButton() {
+  savedPosters.classList.remove('hidden');
+  mainPage.classList.add('hidden');
+};
 
 function posterFormButton() {
-  mainPage.classList.add("hidden");
-  posterForm.classList.remove("hidden");
-}
+  mainPage.classList.add('hidden');
+  posterForm.classList.remove('hidden');
+};
 
 function randomPoster() {
   var randomImage = images[getRandomIndex(images)];
