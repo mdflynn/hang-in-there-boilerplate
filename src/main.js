@@ -2,15 +2,16 @@
 var posterImage = document.querySelector('.poster-img');
 var posterTitle = document.querySelector('.poster-title');
 var posterQuote = document.querySelector('.poster-quote');
+var mainPage = document.querySelector('.main-poster');
+var posterForm = document.querySelector('.poster-form');
+var savedPosters = document.querySelector('.saved-posters');
 var randomizedButton = document.querySelector('.show-random');
 var formButton = document.querySelector('.show-form');
 var showSavedButton = document.querySelector('.show-saved');
 var showMainButton = document.querySelector('.show-main');
 var backToMainButton = document.querySelector('.back-to-main');
-var mainPage = document.querySelector('.main-poster');
-var posterForm = document.querySelector('.poster-form');
-var savedPosters = document.querySelector('.saved-posters');
 var makePosterButton = document.querySelector('.make-poster');
+var savePosterButton = document.querySelector('.save-poster');
 
 // we've provided you with some data to work with 👇
 var images = [
@@ -111,6 +112,8 @@ var quotes = [
   "A champion is defined not by their wins but by how they can recover when they fall."
 ];
 
+var savedPostersArray = [];
+
 var currentPoster;
 
 // event listeners go here 👇
@@ -121,28 +124,21 @@ showSavedButton.addEventListener('click', savedPosterButton);
 showMainButton.addEventListener('click', takeMeBack);
 backToMainButton.addEventListener('click', mainBack);
 makePosterButton.addEventListener('click', makePoster);
+savePosterButton.addEventListener('click', savePoster);
 // functions and event handlers go here 👇
 // (we've provided one for you to get you started)!
-function mainBack() {
-  mainPage.classList.remove('hidden');
-  savedPosters.classList.add('hidden');
-};
 
-function takeMeBack() {
-  mainPage.classList.remove('hidden');
-  posterForm.classList.add('hidden');
-};
 
-function savedPosterButton() {
-  savedPosters.classList.remove('hidden');
-  mainPage.classList.add('hidden');
-};
 
-function posterFormButton() {
-  mainPage.classList.add('hidden');
-  posterForm.classList.remove('hidden');
+function randomPoster() {
+  var randomImage = images[getRandomIndex(images)];
+  var randomTitle = titles[getRandomIndex(titles)];
+  var randomQuote = quotes[getRandomIndex(quotes)];
+  currentPoster = new Poster(randomImage, randomTitle, randomQuote);
+  posterImage.setAttribute("src", randomImage);
+  posterTitle.innerText = randomTitle;
+  posterQuote.innerText = randomQuote;
 };
-
 
 function makePoster() {
   event.preventDefault();
@@ -159,16 +155,36 @@ function makePoster() {
   takeMeBack();
 }
 
-function randomPoster() {
-  var randomImage = images[getRandomIndex(images)];
-  var randomTitle = titles[getRandomIndex(titles)];
-  var randomQuote = quotes[getRandomIndex(quotes)];
-  currentPoster = new Poster(randomImage, randomTitle, randomQuote);
-  posterImage.setAttribute("src", randomImage);
-  posterTitle.innerText = randomTitle;
-  posterQuote.innerText = randomQuote;
+function savePoster() {
+  savedPostersArray.push(currentPoster);
+}
+
+function mainBack() {
+  mainPage.classList.remove('hidden');
+  savedPosters.classList.add('hidden');
 };
 
+function takeMeBack() {
+  mainPage.classList.remove('hidden');
+  posterForm.classList.add('hidden');
+};
+
+function savedPosterButton() {
+  savedPosters.classList.remove('hidden');
+  mainPage.classList.add('hidden');
+  // var savedPostersGrid = document.querySelector('.saved-posters-grid');
+  // var savedPostersGrid = document.getElementsByClassName(".saved-posters-grid");
+  // savedPostersGrid.src = savedPostersArray;
+  // var miniPoster = document.getElementsByClassName('.poster').src;
+  // document.getElementsByClassName('.saved-posters-grid').innerHTML = miniPoster;
+  var miniPoster = document.querySelector('.saved-posters-grid');
+  miniPoster.innerHTML = savedPostersArray;
+};
+
+function posterFormButton() {
+  mainPage.classList.add('hidden');
+  posterForm.classList.remove('hidden');
+};
 
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
