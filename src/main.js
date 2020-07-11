@@ -2,14 +2,14 @@
 var posterImage = document.querySelector('.poster-img');
 var posterTitle = document.querySelector('.poster-title');
 var posterQuote = document.querySelector('.poster-quote');
+var mainPage = document.querySelector('.main-poster');
+var posterForm = document.querySelector('.poster-form');
+var savedPosters = document.querySelector('.saved-posters');
 var randomizedButton = document.querySelector('.show-random');
 var formButton = document.querySelector('.show-form');
 var showSavedButton = document.querySelector('.show-saved');
 var showMainButton = document.querySelector('.show-main');
 var backToMainButton = document.querySelector('.back-to-main');
-var mainPage = document.querySelector('.main-poster');
-var posterForm = document.querySelector('.poster-form');
-var savedPosters = document.querySelector('.saved-posters');
 var makePosterButton = document.querySelector('.make-poster');
 
 // we've provided you with some data to work with 👇
@@ -123,25 +123,6 @@ backToMainButton.addEventListener('click', mainBack);
 makePosterButton.addEventListener('click', makePoster);
 // functions and event handlers go here 👇
 // (we've provided one for you to get you started)!
-function mainBack() {
-  mainPage.classList.remove('hidden');
-  savedPosters.classList.add('hidden');
-};
-
-function takeMeBack() {
-  mainPage.classList.remove('hidden');
-  posterForm.classList.add('hidden');
-};
-
-function savedPosterButton() {
-  savedPosters.classList.remove('hidden');
-  mainPage.classList.add('hidden');
-};
-
-function posterFormButton() {
-  mainPage.classList.add('hidden');
-  posterForm.classList.remove('hidden');
-};
 
 
 function makePoster() {
@@ -169,6 +150,25 @@ function randomPoster() {
   posterQuote.innerText = randomQuote;
 };
 
+function mainBack() {
+  mainPage.classList.remove('hidden');
+  savedPosters.classList.add('hidden');
+};
+
+function takeMeBack() {
+  mainPage.classList.remove('hidden');
+  posterForm.classList.add('hidden');
+};
+
+function savedPosterButton() {
+  savedPosters.classList.remove('hidden');
+  mainPage.classList.add('hidden');
+};
+
+function posterFormButton() {
+  mainPage.classList.add('hidden');
+  posterForm.classList.remove('hidden');
+};
 
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
