@@ -172,6 +172,13 @@ function takeMeBack() {
 function savedPosterButton() {
   savedPosters.classList.remove('hidden');
   mainPage.classList.add('hidden');
+  // var savedPostersGrid = document.querySelector('.saved-posters-grid');
+  // var savedPostersGrid = document.getElementsByClassName(".saved-posters-grid");
+  // savedPostersGrid.src = savedPostersArray;
+  // var miniPoster = document.getElementsByClassName('.poster').src;
+  // document.getElementsByClassName('.saved-posters-grid').innerHTML = miniPoster;
+  var miniPoster = document.querySelector('.saved-posters-grid');
+  miniPoster.innerHTML = savedPostersArray;
 };
 
 function posterFormButton() {
