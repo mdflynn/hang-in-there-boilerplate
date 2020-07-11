@@ -156,26 +156,25 @@ function makePoster() {
 }
 
 function displaySavedPosters() {
-  // var savedPostersGrid = document.querySelector('.saved-posters-grid');
-  // var savedPostersGrid = document.getElementsByClassName(".saved-posters-grid");
-  // savedPostersGrid.src = savedPostersArray;
-  // var miniPoster = document.getElementsByClassName('.poster').src;
-  // document.getElementsByClassName('.saved-posters-grid').innerHTML = miniPoster;
-  //FOR LOOP savedPostersArray?
-  var miniPoster = document.querySelector('.saved-posters-grid');
-
-  var displayPosters = `
-    <img class="mini-poster" src="">
-    <h4 class="mini-poster"></h4>
-    <h2 class="mini-poster"></h2>
-  `;
-
+  var miniPosterImage = document.querySelector('img');
+  var miniPosterTitle = document.querySelector('h2');
+  var miniPosterQuote = document.querySelector('h4');
   for (var i = 0; i < savedPostersArray.length; i++) {
     var values = Object.values(savedPostersArray[i]);
     console.log(values);
-  }
-
-  miniPoster.insertAdjacentHTML('afterbegin', displayPosters);
+    miniPosterImage.setAttribute("src", values[1]);
+    miniPosterTitle.innerText = values[2];
+    miniPosterQuote.innerText = values[3];
+  };
+  var miniPoster = document.querySelector('.saved-posters-grid');
+  var displayPosters = `
+    <div>
+      <img class="mini-poster" src="${values[1]}">
+      <h4 class="mini-poster">${values[2]}</h4>
+      <h2 class="mini-poster">${values[3]}</h2>
+    </div>
+  `;
+  miniPoster.insertAdjacentHTML('afterbegin', savedPostersArray);
 };
 
 function savePoster() {
