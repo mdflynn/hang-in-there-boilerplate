@@ -112,6 +112,8 @@ var quotes = [
   "A champion is defined not by their wins but by how they can recover when they fall."
 ];
 
+var savedPostersArray = [];
+
 var currentPoster;
 
 // event listeners go here 👇
@@ -122,9 +124,21 @@ showSavedButton.addEventListener('click', savedPosterButton);
 showMainButton.addEventListener('click', takeMeBack);
 backToMainButton.addEventListener('click', mainBack);
 makePosterButton.addEventListener('click', makePoster);
+savePosterButton.addEventListener('click', savePoster);
 // functions and event handlers go here 👇
 // (we've provided one for you to get you started)!
 
+
+
+function randomPoster() {
+  var randomImage = images[getRandomIndex(images)];
+  var randomTitle = titles[getRandomIndex(titles)];
+  var randomQuote = quotes[getRandomIndex(quotes)];
+  currentPoster = new Poster(randomImage, randomTitle, randomQuote);
+  posterImage.setAttribute("src", randomImage);
+  posterTitle.innerText = randomTitle;
+  posterQuote.innerText = randomQuote;
+};
 
 function makePoster() {
   event.preventDefault();
@@ -141,15 +155,9 @@ function makePoster() {
   takeMeBack();
 }
 
-function randomPoster() {
-  var randomImage = images[getRandomIndex(images)];
-  var randomTitle = titles[getRandomIndex(titles)];
-  var randomQuote = quotes[getRandomIndex(quotes)];
-  currentPoster = new Poster(randomImage, randomTitle, randomQuote);
-  posterImage.setAttribute("src", randomImage);
-  posterTitle.innerText = randomTitle;
-  posterQuote.innerText = randomQuote;
-};
+function savePoster() {
+  savedPostersArray.push(currentPoster);
+}
 
 function mainBack() {
   mainPage.classList.remove('hidden');
