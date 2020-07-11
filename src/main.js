@@ -11,6 +11,7 @@ var showSavedButton = document.querySelector('.show-saved');
 var showMainButton = document.querySelector('.show-main');
 var backToMainButton = document.querySelector('.back-to-main');
 var makePosterButton = document.querySelector('.make-poster');
+var savePosterButton = document.querySelector('.save-poster');
 
 // we've provided you with some data to work with 👇
 var images = [
