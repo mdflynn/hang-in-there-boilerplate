@@ -155,6 +155,29 @@ function makePoster() {
   takeMeBack();
 }
 
+function displaySavedPosters() {
+  // var savedPostersGrid = document.querySelector('.saved-posters-grid');
+  // var savedPostersGrid = document.getElementsByClassName(".saved-posters-grid");
+  // savedPostersGrid.src = savedPostersArray;
+  // var miniPoster = document.getElementsByClassName('.poster').src;
+  // document.getElementsByClassName('.saved-posters-grid').innerHTML = miniPoster;
+  //FOR LOOP savedPostersArray?
+  var miniPoster = document.querySelector('.saved-posters-grid');
+
+  var displayPosters = `
+    <img class="mini-poster" src="">
+    <h4 class="mini-poster"></h4>
+    <h2 class="mini-poster"></h2>
+  `;
+
+  for (var i = 0; i < savedPostersArray.length; i++) {
+    var values = Object.values(savedPostersArray[i]);
+    console.log(values);
+  }
+
+  miniPoster.insertAdjacentHTML('afterbegin', displayPosters);
+};
+
 function savePoster() {
   savedPostersArray.push(currentPoster);
 }
@@ -172,13 +195,7 @@ function takeMeBack() {
 function savedPosterButton() {
   savedPosters.classList.remove('hidden');
   mainPage.classList.add('hidden');
-  // var savedPostersGrid = document.querySelector('.saved-posters-grid');
-  // var savedPostersGrid = document.getElementsByClassName(".saved-posters-grid");
-  // savedPostersGrid.src = savedPostersArray;
-  // var miniPoster = document.getElementsByClassName('.poster').src;
-  // document.getElementsByClassName('.saved-posters-grid').innerHTML = miniPoster;
-  var miniPoster = document.querySelector('.saved-posters-grid');
-  miniPoster.innerHTML = savedPostersArray;
+  displaySavedPosters();
 };
 
 function posterFormButton() {
