@@ -177,6 +177,12 @@ function savePoster() {
     savedPostersArray.push(currentPoster);
 }
 
+function removePoster() {
+  var miniPosterSelect = document.querySelector('.mini-poster');
+
+  
+}
+
 function mainBack() {
   mainPage.classList.remove('hidden');
   savedPosters.classList.add('hidden');
