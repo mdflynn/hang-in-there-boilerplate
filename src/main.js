@@ -12,6 +12,8 @@ var showMainButton = document.querySelector('.show-main');
 var backToMainButton = document.querySelector('.back-to-main');
 var makePosterButton = document.querySelector('.make-poster');
 var savePosterButton = document.querySelector('.save-poster');
+var removeSavedPoster = document.querySelector('.saved-posters-grid');
+
 
 // we've provided you with some data to work with 👇
 var images = [
@@ -160,7 +162,7 @@ function displaySavedPosters() {
   var posterData = '';
   for (var i = 0; i < savedPostersArray.length; i++) {
     var displayPoster = `
-      <div class="mini-poster">
+      <div class="mini-poster" id="${savedPostersArray[i].id}">
         <img src="${savedPostersArray[i].imageURL}">
         <h2>${savedPostersArray[i].title}</h2>
         <h4>${savedPostersArray[i].quote}</h4>
@@ -168,6 +170,7 @@ function displaySavedPosters() {
     `;
     posterData += displayPoster;
   };
+  console.log(posterData);
   var miniPoster = document.querySelector('.saved-posters-grid');
 
   miniPoster.innerHTML = posterData;
@@ -176,13 +179,19 @@ function displaySavedPosters() {
 function savePoster() {
   if (!savedPostersArray.includes(currentPoster))
     savedPostersArray.push(currentPoster);
-}
+};
 
-function removePoster() {
-  var miniPosterSelect = document.querySelector('.mini-poster');
-
-
-}
+function removePoster(event) {
+  var targetedPoster = event.target.id;
+  console.log(targetedPoster);
+  for(var i = 0; i < savedPostersArray.length; i++) {
+    // console.log("1", savedPostersArray[i].id, "2", targetedPoster);
+    if (savedPostersArray[i].id == targetedPoster) {
+      savedPostersArray.splice(i, 1);
+    }
+  }
+  displaySavedPosters();
+};
 
 function mainBack() {
   mainPage.classList.remove('hidden');
