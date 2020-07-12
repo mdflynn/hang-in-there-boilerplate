@@ -156,14 +156,8 @@ function makePoster() {
 }
 
 function displaySavedPosters() {
-  // var miniPosterImage = document.querySelector('img');
-  // var miniPosterTitle = document.querySelector('h2');
-  // var miniPosterQuote = document.querySelector('h4');
-  //creating html in method
-
-  var newString = '';
+  var posterData = '';
   for (var i = 0; i < savedPostersArray.length; i++) {
-    // var values = Object.values(savedPostersArray[i]);
     var displayPoster = `
       <div class="mini-poster">
         <img src="${savedPostersArray[i].imageURL}">
@@ -171,21 +165,15 @@ function displaySavedPosters() {
         <h4>${savedPostersArray[i].quote}</h4>
       </div>
     `;
-    newString += displayPoster;
-    // console.log(values);
-    // miniPosterImage.setAttribute("src", values[1]);
-    // miniPosterTitle.innerText = values[2];
-    // miniPosterQuote.innerText = values[3];
+    posterData += displayPoster;
   };
   var miniPoster = document.querySelector('.saved-posters-grid');
 
-  miniPoster.innerHTML = newString;
+  miniPoster.innerHTML = posterData;
 };
 
 function savePoster() {
   savedPostersArray.push(currentPoster);
-  // console.log(currentPoster);
-  // console.log(savedPostersArray);
 }
 
 function mainBack() {
