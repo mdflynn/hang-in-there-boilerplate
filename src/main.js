@@ -125,6 +125,7 @@ showMainButton.addEventListener('click', takeMeBack);
 backToMainButton.addEventListener('click', mainBack);
 makePosterButton.addEventListener('click', makePoster);
 savePosterButton.addEventListener('click', savePoster);
+removeSavedPoster.addEventListener('dblclick', removePoster);
 // functions and event handlers go here 👇
 // (we've provided one for you to get you started)!
 
@@ -180,7 +181,7 @@ function savePoster() {
 function removePoster() {
   var miniPosterSelect = document.querySelector('.mini-poster');
 
-  
+
 }
 
 function mainBack() {
