@@ -173,7 +173,8 @@ function displaySavedPosters() {
 };
 
 function savePoster() {
-  savedPostersArray.push(currentPoster);
+  if (!savedPostersArray.includes(currentPoster))
+    savedPostersArray.push(currentPoster);
 }
 
 function mainBack() {
