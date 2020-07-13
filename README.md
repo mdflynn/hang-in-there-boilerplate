@@ -1,79 +1,43 @@
 # Hang In There
 
-A boilerplate repo.
+Brigette Doelp and Mike Flynn Paired Project; mod1
 
-## Set Up
+##### Description:
 
-1. One teammate: fork this repository
-2. Go to settings and turn on GitHub Pages for this repository
-3. All teammates: clone down this repository
-4. `cd` into the repository
-5. Run `open index.html` to view it in the browser
+This application allows you to generate randomized motivational posters, as well as create your own. You can save any posters you create, or randomly generate for later motivational boosts.
 
-## Progression
+###### Usage
+- Open the index.html file in your terminal.
 
-### Iteration 0 - Main Page
+- Navigate to the opened webpage.
 
-![screenshot of main page showing poster](/readme-imgs/homepage.png)
+- Generate and save posters at random. Or click on "Make Your Own Poster" and upload an image with a title and quote.
 
-- When the page loads, we should see a poster with a randomly selected image, title, and quote
+###### Timeline
 
-### Iteration 1 - Switching Views
+Over the course of one week, we established our DTR, and followed the iterations provided. We made steady progress, and completed the required iterations within the allotted project timeline.
 
-Form page:
-![screenshot of form](/readme-imgs/form.png)
+###### Resources
 
-Saved posters page (once working with extra saved posters):
-![screenshot of saved posters page](/readme-imgs/saved.png)
+For this project we used GitHub to manage workflow and Atom as our text editor.
+Our information resources spanned from MDN documentation to advice from mentors and classmates.
 
-- When a user clicks the "Make Your Own Poster" button, we should see the form, and the main poster should be hidden
-- When a user clicks the "View Saved Posters" button, we should see the saved posters area, and the main poster should be hidden
-<!-- - When a user clicks the "Nevermind, take me back!" or "Back to Main" buttons, we should only see the main poster section -->
-- In summary: Be able to switch between the three views (main poster, form, and saved posters) on the correct button clicks
+###### Final Project Outcome
 
-_Hint: go check out the HTML and CSS files to see how the form and saved posters sections are being hidden in the first place_
+The first feature of this website is generating a random motivational poster on a button click.
 
-## Iteration 2 - Creating a New Poster
+[gif]
 
-Form being filled out:
-![screenshot of form](/readme-imgs/form.png)
+Secondly, you can create your own motivational poster by filling out the required input fields on the form page.
 
-Once poster is saved:
-![screenshot of result](/readme-imgs/form-result.png)
+[gif]
 
-- On the new poster form view, users should be able to fill out the three input fields and then hit the save button
-- When the save button is clicked, several things will happen:
-  - Save the submitted data into the respective arrays (image URL into the images array, etc) so that future random posters can use the user-created data
-  - Use the values from the inputs to create a new instance of our Poster class
-  - Change back to the main poster view (hiding the form view again)
-  - Display the newly created poster image, title, and quote in the main view
+Lastly, you can save posters and view them on their own page.
 
-## Iteration 3 - Saving & Viewing Posters
+[gif]
 
-Saved posters view:
-![screenshot of saved posters section](/readme-imgs/saved.png)
+###### Credits:
 
-- When a user clicks the "Save This Poster" button, the current main poster will be added to the `savedPosters` array.
-- If a user clicks the "Save This Poster" more than once on a single poster, it will still only be saved once (no duplicates)
-- When a user clicks the "Show Saved Posters" button, we should see the saved posters section
-- All the posters in the `savedPosters` array should be displayed in the saved posters grid section
+Brigette Doelp & Mike Flynn
 
-## Iteration 4 - Deleting Saved Posters
-
-- From the saved posters view, if a user double clicks a saved poster, it will be deleted
-
-_Hint: How will you update the data model to achieve this?_
-
-## Optional Extensions - Gettin' fancy
-
-Here's a list of possible extensions to implement - but **ONLY IF** your team has completed all the previous iterations **AND** have cleaned up your code to make it DRYer and more readable.
-
-You are welcome to add your own extensions. Be sure they are thoughtful in terms of UX/UI, and that they do not break any prior functionality.
-
-- Implement data validation and error handling into the form (disable button, provide error messages if data entered is not correct, etc)
-- In the main poster view, allow users to click each piece of the poster (image, title, quote) to update just that piece with another random item from the appropriate array
-- When a user single clicks a saved poster, create a modal to view it larger
-- Allow users to drag and drop saved posters into whatever order they want them to appear
-
-
-Project spec & rubric can be found [here](https://frontend.turing.io/projects/module-1/hang-in-there.html)
+![alt text](https://images-na.ssl-images-amazon.com/images/I/61Ix7r4EFCL._AC_SL1024_.jpg)
