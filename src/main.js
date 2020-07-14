@@ -1,4 +1,3 @@
-// query selector variables go here 👇
 var posterImage = document.querySelector('.poster-img');
 var posterTitle = document.querySelector('.poster-title');
 var posterQuote = document.querySelector('.poster-quote');
@@ -15,7 +14,6 @@ var savePosterButton = document.querySelector('.save-poster');
 var removeSavedPoster = document.querySelector('.saved-posters-grid');
 
 
-// we've provided you with some data to work with 👇
 var images = [
   "./assets/bees.jpg",
   "./assets/bridge.jpg",
@@ -118,7 +116,6 @@ var savedPostersArray = [];
 
 var currentPoster;
 
-// event listeners go here 👇
 window.onload = randomPoster;
 randomizedButton.addEventListener('click',randomPoster);
 formButton.addEventListener('click', posterFormButton);
@@ -128,10 +125,6 @@ backToMainButton.addEventListener('click', mainBack);
 makePosterButton.addEventListener('click', makePoster);
 savePosterButton.addEventListener('click', savePoster);
 removeSavedPoster.addEventListener('dblclick', removePoster);
-// functions and event handlers go here 👇
-// (we've provided one for you to get you started)!
-
-
 
 function randomPoster() {
   var randomImage = images[getRandomIndex(images)];
@@ -156,7 +149,7 @@ function makePoster() {
   posterTitle.innerText = enteredTitle;
   posterQuote.innerText = enteredQuote;
   takeMeBack();
-}
+};
 
 function displaySavedPosters() {
   var posterData = '';
@@ -170,7 +163,7 @@ function displaySavedPosters() {
     `;
     posterData += displayPoster;
   };
-  console.log(posterData);
+
   var miniPoster = document.querySelector('.saved-posters-grid');
 
   miniPoster.innerHTML = posterData;
@@ -183,9 +176,7 @@ function savePoster() {
 
 function removePoster(event) {
   var targetedPoster = event.target.id;
-  console.log(targetedPoster);
   for(var i = 0; i < savedPostersArray.length; i++) {
-    // console.log("1", savedPostersArray[i].id, "2", targetedPoster);
     if (savedPostersArray[i].id == targetedPoster) {
       savedPostersArray.splice(i, 1);
     }
