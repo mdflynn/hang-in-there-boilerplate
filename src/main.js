@@ -13,7 +13,6 @@ var makePosterButton = document.querySelector('.make-poster');
 var savePosterButton = document.querySelector('.save-poster');
 var removeSavedPoster = document.querySelector('.saved-posters-grid');
 
-
 var images = [
   "./assets/bees.jpg",
   "./assets/bridge.jpg",
@@ -111,9 +110,7 @@ var quotes = [
   "Each person must live their life as a model for others.",
   "A champion is defined not by their wins but by how they can recover when they fall."
 ];
-
 var savedPostersArray = [];
-
 var currentPoster;
 
 window.onload = randomPoster;
@@ -153,6 +150,7 @@ function makePoster() {
 
 function displaySavedPosters() {
   var posterData = '';
+  var miniPoster = document.querySelector('.saved-posters-grid');
   for (var i = 0; i < savedPostersArray.length; i++) {
     var displayPoster = `
       <div class="mini-poster" id="${savedPostersArray[i].id}">
@@ -163,9 +161,6 @@ function displaySavedPosters() {
     `;
     posterData += displayPoster;
   };
-
-  var miniPoster = document.querySelector('.saved-posters-grid');
-
   miniPoster.innerHTML = posterData;
 };
 
@@ -180,7 +175,7 @@ function removePoster(event) {
     if (savedPostersArray[i].id == targetedPoster) {
       savedPostersArray.splice(i, 1);
     }
-  }
+  };
   displaySavedPosters();
 };
 
@@ -201,8 +196,8 @@ function savedPosterButton() {
 };
 
 function posterFormButton() {
-  mainPage.classList.add('hidden');
   posterForm.classList.remove('hidden');
+  mainPage.classList.add('hidden');
 };
 
 function getRandomIndex(array) {
