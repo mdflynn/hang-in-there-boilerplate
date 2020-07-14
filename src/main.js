@@ -1,4 +1,3 @@
-// query selector variables go here 👇
 var posterImage = document.querySelector('.poster-img');
 var posterTitle = document.querySelector('.poster-title');
 var posterQuote = document.querySelector('.poster-quote');
@@ -14,8 +13,6 @@ var makePosterButton = document.querySelector('.make-poster');
 var savePosterButton = document.querySelector('.save-poster');
 var removeSavedPoster = document.querySelector('.saved-posters-grid');
 
-
-// we've provided you with some data to work with 👇
 var images = [
   "./assets/bees.jpg",
   "./assets/bridge.jpg",
@@ -113,12 +110,9 @@ var quotes = [
   "Each person must live their life as a model for others.",
   "A champion is defined not by their wins but by how they can recover when they fall."
 ];
-
 var savedPostersArray = [];
-
 var currentPoster;
 
-// event listeners go here 👇
 window.onload = randomPoster;
 randomizedButton.addEventListener('click',randomPoster);
 formButton.addEventListener('click', posterFormButton);
@@ -128,10 +122,6 @@ backToMainButton.addEventListener('click', mainBack);
 makePosterButton.addEventListener('click', makePoster);
 savePosterButton.addEventListener('click', savePoster);
 removeSavedPoster.addEventListener('dblclick', removePoster);
-// functions and event handlers go here 👇
-// (we've provided one for you to get you started)!
-
-
 
 function randomPoster() {
   var randomImage = images[getRandomIndex(images)];
@@ -144,7 +134,6 @@ function randomPoster() {
 };
 
 function makePoster() {
-  event.preventDefault();
   var posterImageUrl = document.querySelector('#poster-image-url').value;
   var enteredTitle = document.querySelector('#poster-title').value;
   var enteredQuote = document.querySelector('#poster-quote').value;
@@ -156,10 +145,12 @@ function makePoster() {
   posterTitle.innerText = enteredTitle;
   posterQuote.innerText = enteredQuote;
   takeMeBack();
-}
+  event.preventDefault();
+};
 
 function displaySavedPosters() {
   var posterData = '';
+  var miniPoster = document.querySelector('.saved-posters-grid');
   for (var i = 0; i < savedPostersArray.length; i++) {
     var displayPoster = `
       <div class="mini-poster" id="${savedPostersArray[i].id}">
@@ -170,9 +161,6 @@ function displaySavedPosters() {
     `;
     posterData += displayPoster;
   };
-  console.log(posterData);
-  var miniPoster = document.querySelector('.saved-posters-grid');
-
   miniPoster.innerHTML = posterData;
 };
 
@@ -183,13 +171,11 @@ function savePoster() {
 
 function removePoster(event) {
   var targetedPoster = event.target.id;
-  console.log(targetedPoster);
   for(var i = 0; i < savedPostersArray.length; i++) {
-    // console.log("1", savedPostersArray[i].id, "2", targetedPoster);
     if (savedPostersArray[i].id == targetedPoster) {
       savedPostersArray.splice(i, 1);
     }
-  }
+  };
   displaySavedPosters();
 };
 
@@ -210,8 +196,8 @@ function savedPosterButton() {
 };
 
 function posterFormButton() {
-  mainPage.classList.add('hidden');
   posterForm.classList.remove('hidden');
+  mainPage.classList.add('hidden');
 };
 
 function getRandomIndex(array) {
