@@ -30,7 +30,7 @@ The first feature of this website is generating a random motivational poster on 
 
 Secondly, you can create your own motivational poster by filling out the required input fields on the form page.
 
-![alt text](https://i.imgur.com/F73IuSL.gifv)
+![alt text](https://i.imgur.com/F73IuSL.gif)
 
 Lastly, you can save posters and view them on their own page, as well as delete them on a double click.
 
