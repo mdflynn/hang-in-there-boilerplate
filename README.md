@@ -6,23 +6,23 @@ Brigette Doelp and Mike Flynn Paired Project; mod1
 
 This application allows you to generate randomized motivational posters, as well as create your own. You can save any posters you create, or randomly generate for later motivational boosts.
 
-###### Usage
+##### Usage:
 - Open the index.html file in your terminal.
 
 - Navigate to the opened webpage.
 
 - Generate and save posters at random. Or click on "Make Your Own Poster" and upload an image with a title and quote.
 
-###### Timeline
+##### Timeline:
 
 Over the course of one week, we established our DTR, and followed the iterations provided. We made steady progress, and completed the required iterations within the allotted project timeline.
 
-###### Resources
+##### Resources:
 
 For this project we used GitHub to manage workflow and Atom as our text editor.
 Our information resources spanned from MDN documentation to advice from mentors and classmates.
 
-###### Final Project Outcome
+##### Final Project Outcome:
 
 The first feature of this website is generating a random motivational poster on a button click.
 
@@ -37,8 +37,6 @@ Lastly, you can save posters and view them on their own page, as well as delete 
 ![alt text](https://i.imgur.com/XvGYfxT.gif)
 ![alt text](https://i.imgur.com/5xNvxVs.gif)
 
-###### Credits:
-
-Brigette Doelp & Mike Flynn
+##### Credits:
 
 ![alt text](https://i.imgur.com/sYUdYNM.png)
