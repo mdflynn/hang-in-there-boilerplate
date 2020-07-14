@@ -134,7 +134,6 @@ function randomPoster() {
 };
 
 function makePoster() {
-  event.preventDefault();
   var posterImageUrl = document.querySelector('#poster-image-url').value;
   var enteredTitle = document.querySelector('#poster-title').value;
   var enteredQuote = document.querySelector('#poster-quote').value;
@@ -146,6 +145,7 @@ function makePoster() {
   posterTitle.innerText = enteredTitle;
   posterQuote.innerText = enteredQuote;
   takeMeBack();
+  event.preventDefault();
 };
 
 function displaySavedPosters() {
