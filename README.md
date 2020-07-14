@@ -26,18 +26,19 @@ Our information resources spanned from MDN documentation to advice from mentors 
 
 The first feature of this website is generating a random motivational poster on a button click.
 
-[gif]
+![alt text](https://i.imgur.com/56PWgZO.gifv)
 
 Secondly, you can create your own motivational poster by filling out the required input fields on the form page.
 
-[gif]
+![alt text](https://i.imgur.com/F73IuSL.gifv)
 
-Lastly, you can save posters and view them on their own page.
+Lastly, you can save posters and view them on their own page, as well as delete them on a double click.
 
-[gif]
+![alt text](https://i.imgur.com/XvGYfxT.gifv)
+![alt text]((https://i.imgur.com/5xNvxVs.gifv))
 
 ###### Credits:
 
 Brigette Doelp & Mike Flynn
 
-![alt text](https://images-na.ssl-images-amazon.com/images/I/61Ix7r4EFCL._AC_SL1024_.jpg)
+![alt text](https://i.imgur.com/sYUdYNM.png)
