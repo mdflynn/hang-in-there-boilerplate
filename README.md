@@ -7,7 +7,7 @@
 This application allows you to generate randomized motivational posters, as well as create your own. You can save any posters you create, or randomly generate for later motivational boosts.
 
 ##### Usage:
-- Open the index.html file in your terminal.
+- Open [this link to the website.](https://mdflynn.github.io/hang-in-there-boilerplate/)
 
 - Navigate to the opened webpage.
 
