@@ -1,6 +1,6 @@
 # Hang In There
 
-Brigette Doelp and Mike Flynn Paired Project; mod1
+[Brigette Doelp](https://github.com/BrigetteDoelp) and [Mike Flynn](https://github.com/mdflynn) Paired Project; mod1
 
 ##### Description:
 
